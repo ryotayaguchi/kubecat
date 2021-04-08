@@ -3,6 +3,48 @@
 # What is kubecat?
 kubecat is not a cat obviously but might be a kube.
 
+# How to bring kubecat to your environment
+
+<img src="img/penguin_wrapped.png" width="250" alt="penguin wrapped">
+
+## in local Linux environment
+- see https://golang.org/doc/install to install golang
+
+```
+git clone git@github.com:ryotayaguchi/kubecat.git
+cd kubecat
+./local.sh deploy
+./local.sh test
+./local.sh undeploy
+```
+
+<img src="img/wheel_whale.png" width="250" alt="whell whale">
+
+## in Docker environment
+- see https://docs.docker.com/engine/install/ to install Docker Engine and start Docker service
+
+```
+git clone git@github.com:ryotayaguchi/kubecat.git
+cd kubecat
+./docker.sh deploy
+./docker.sh test
+./docker.sh undeploy
+```
+
+<img src="img/wheel_is_yummy.png" width="250" alt="wheel is yummy">
+
+## in minikube environment
+- see https://docs.docker.com/engine/install/ to install Docker Engine and start Docker service
+- see https://minikube.sigs.k8s.io/docs/start/ to install and start minikube
+
+```
+git clone git@github.com:ryotayaguchi/kubecat.git
+cd kubecat
+./minikube.sh deploy
+./minikube.sh test
+./minikube.sh undeploy
+```
+
 # How it works?
 It works somehow
 
@@ -130,44 +172,3 @@ response
 ok. I'm ready for running away.
 ```
 
-# How to bring kubecat to your environment
-
-<img src="img/penguin_wrapped.png" width="250" alt="penguin wrapped">
-
-## in local Linux environment
-- see https://golang.org/doc/install to install golang
-
-```
-git clone git@github.com:ryotayaguchi/kubecat.git
-cd kubecat
-./local.sh deploy
-./local.sh test
-./local.sh undeploy
-```
-
-<img src="img/wheel_whale.png" width="250" alt="whell whale">
-
-## in Docker environment
-- see https://docs.docker.com/engine/install/ to install Docker Engine and start Docker service
-
-```
-git clone git@github.com:ryotayaguchi/kubecat.git
-cd kubecat
-./docker.sh deploy
-./docker.sh test
-./docker.sh undeploy
-```
-
-<img src="img/wheel_is_yummy.png" width="250" alt="wheel is yummy">
-
-## in minikube environment
-- see https://docs.docker.com/engine/install/ to install Docker Engine and start Docker service
-- see https://minikube.sigs.k8s.io/docs/start/ to install and start minikube
-
-```
-git clone git@github.com:ryotayaguchi/kubecat.git
-cd kubecat
-./minikube.sh deploy
-./minikube.sh test
-./minikube.sh undeploy
-```
