@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubecat
+  labels:
+    role: kubecat
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: kubecat
+  template:
+    metadata:
+      labels:
+        role: kubecat
+      annotations:
+        hash: DeploymentHash
+    spec:
+      containers:
+      - name: kubecat
+        image: kubecat:latest
+        imagePullPolicy: Never
+        envFrom:
+        - configMapRef:
+            name: kubecat
+        livenessProbe:
+          httpGet:
+            path: /liveness/
+            port: 8080
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readiness/
+            port: 8080
+          periodSeconds: 5
+        lifecycle:
+          preStop:
+            httpGet:
+              path: /prestop/
+              port: 8080
